@@ -29,5 +29,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus">
+@import './styles/nanoreset.css';
+@import './styles/theme.styl';
+
+.theme-container {
+  padding: 0 1.2em;
+}
 </style>

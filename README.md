@@ -1,4 +1,5 @@
-<h1 align="middle">blog-vuepress-theme</h1>
-<p align="middle">Simple Vuepress theme with blogging support</p>
+# blog-vuepress-theme
 
-> ## Under development, not ready for use.
+> Simple [VuePress](https://github.com/vuejs/vuepress) theme with blogging support.
+
+### Under development, not ready for use.

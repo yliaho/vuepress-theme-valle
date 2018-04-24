@@ -1,5 +1,7 @@
 <template>
-  <div class="posts">
+  <div 
+    class="posts"
+  >
     <PostPreview v-for="(post, index) in $postQuery(filter)" :post="post" :key="index" />
   </div>
 </template>
@@ -21,5 +23,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+.posts {
+  display: grid;
+  grid-gap: 1.2em;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  > * {
+  }
+}
 </style>
