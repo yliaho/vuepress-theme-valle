@@ -1,27 +1,33 @@
 <template>
-  <div>
-    <div class="posts">
-      <div 
-        class="post"
-        v-for="{ title, preview, path } in $postQuery('published')" 
-      >
-        <h1 class="post.title"><a :href="path">{{title}}</a></h1>
-        <div v-if="preview.rendered" v-html="preview.rendered" class="post-preview rendered" />
-        <div v-else class="post-preview">
-          {{preview.content}}
-        </div>
-      </div>
-    </div>
+  <div class="theme-container" :class="pageClasses">
+    <Home v-if="isHome" />
   </div>
 </template>
 
 <script>
+import Home from './layouts/Home.vue'
+
 export default {
+  components: {
+    Home
+  },
+
+  computed: {
+    isHome() {
+      return this.$page.path === '/'
+    },
+
+    pageClasses() {
+      return [
+        {
+          'post-page': this.$isPost(this.$page.path),
+          'home-page': this.isHome
+        }
+      ]
+    }
+  }
 }
 </script>
 
 <style>
-
 </style>
-
-

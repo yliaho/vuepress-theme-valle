@@ -1,14 +1,14 @@
 import md from './utils/markdown'
 
-export default ({Vue, options, router}) => {
+export default ({ Vue, options, router }) => {
   Vue.mixin({
     computed: {
       $posts() {
-        const { pages, themeConfig: { postDir } } = this.$site
+        const { pages } = this.$site
 
         return pages
-          .filter(page => page.path.startsWith(postDir || '/posts/'))
-          .map(({excerpt, ...rest}) => {
+          .filter(({ path }) => this.$isPost(path))
+          .map(({ excerpt, ...rest }) => {
             return {
               preview: {
                 content: excerpt || rest.frontmatter.preview,
@@ -19,14 +19,23 @@ export default ({Vue, options, router}) => {
           })
       }
     },
-  
+
     methods: {
+      $isPost(path) {
+        const {
+          themeConfig: { postDir }
+        } = this.$site
+
+        return path.startsWith(postDir || '/posts/')
+      },
+
       $postQuery(filter) {
-        return this.$posts.filter(typeof filter === 'function' 
-          ? filter 
-          : typeof filter === 'string'
-            ? post => post.frontmatter[filter]
-            : post => post
+        return this.$posts.filter(
+          typeof filter === 'function'
+            ? filter
+            : typeof filter === 'string'
+              ? post => post.frontmatter[filter]
+              : post => post
         )
       }
     }
