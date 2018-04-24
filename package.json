@@ -4,8 +4,18 @@
   "description": "Blog theme for Vuepress",
   "author": "Joonas Yliaho",
   "license": "MIT",
+  "scripts": {
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md,vue}": ["node_modules/.bin/prettier --write", "git add"]
+  },
   "dependencies": {
     "markdown-it": "^8.4.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.4",
+    "prettier": "^1.12.1"
+  }
 }
