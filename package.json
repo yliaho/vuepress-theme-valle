@@ -1,0 +1,11 @@
+{
+  "name": "vueblog",
+  "version": "0.1.0",
+  "description": "Blog theme for Vuepress",
+  "author": "Joonas Yliaho",
+  "license": "MIT",
+  "dependencies": {
+    "markdown-it": "^8.4.1"
+  },
+  "devDependencies": {}
+}
