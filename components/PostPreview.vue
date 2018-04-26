@@ -1,13 +1,12 @@
 <template>
-  <div class="post">
+  <div class="post" :style="`grid-column-end: ${fullWidth ? 'span 3' : 'initial'}`">
     <div class="post-wrapper">
       <h1 class="post-title">
         <a :href="post.path">{{post.title}}</a>
       </h1>
       <span class="post-date">{{postDate}}</span>
-      <div v-if="post.preview.rendered" v-html="post.preview.rendered" class="post-content preview rendered" />
-      <div v-else class="post-content preview">
-        {{post.preview.content}}
+      <div class="post-content preview">
+        {{post.preview.plain}}
       </div>
     </div>
   </div>
@@ -18,6 +17,10 @@ export default {
   props: {
     post: {
       required: true
+    },
+    fullWidth: {
+      required: false,
+      default: false
     }
   },
 
@@ -26,6 +29,7 @@ export default {
       const {
         frontmatter: { date }
       } = this.post
+
       return new Date(date).toLocaleDateString('en-us', {
         weekday: 'long',
         year: 'numeric',

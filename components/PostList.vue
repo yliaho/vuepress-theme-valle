@@ -1,8 +1,6 @@
 <template>
-  <div 
-    class="posts"
-  >
-    <PostPreview v-for="(post, index) in $postQuery(filter)" :post="post" :key="index" />
+  <div class="posts">
+    <PostPreview v-for="(post, index) in $postQuery(filter)" :post="post" :full-width="fullWidth" :key="index" />
   </div>
 </template>
 
@@ -16,9 +14,17 @@ export default {
 
   props: {
     filter: {
-      type: String,
+      type: String && Function,
       default: null
+    },
+    fullWidth: {
+      required: false,
+      default: false
     }
+  },
+
+  mounted() {
+    this.fullWidth
   }
 }
 </script>

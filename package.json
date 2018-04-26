@@ -11,9 +11,14 @@
     "*.{js,json,css,md,vue}": ["node_modules/.bin/prettier --write", "git add"]
   },
   "dependencies": {
-    "markdown-it": "^8.4.1"
+    "date-fns": "^1.29.0",
+    "lodash": "^4.17.10",
+    "markdown-it": "^8.4.1",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@types/date-fns": "^2.6.0",
+    "@types/lodash": "^4.14.108",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
     "prettier": "^1.12.1"

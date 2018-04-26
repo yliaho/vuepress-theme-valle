@@ -1,15 +1,18 @@
 <template>
   <div class="theme-container" :class="pageClasses">
     <Home v-if="isHome" />
+    <Post v-else />
   </div>
 </template>
 
 <script>
 import Home from './layouts/Home.vue'
+import Post from './layouts/Post.vue'
 
 export default {
   components: {
-    Home
+    Home,
+    Post
   },
 
   computed: {
@@ -25,7 +28,9 @@ export default {
         }
       ]
     }
-  }
+  },
+
+  mounted() {}
 }
 </script>
 
