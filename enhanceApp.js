@@ -65,6 +65,7 @@ export default ({ Vue, options, router, siteData: { themeConfig } }) => {
       $moduleMeta() {
         const {
           name,
+          version,
           repository: { url }
         } = pkg
 

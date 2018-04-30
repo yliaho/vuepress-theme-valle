@@ -1,6 +1,12 @@
 <template>
   <div class="posts">
-    <PostPreview v-for="(post, index) in $postQuery(filter)" :post="post" :full-width="fullWidth" :key="index" />
+    <slot/>
+    <PostPreview
+      v-for="(post, index) in $postQuery(filter)" 
+      :post="post" 
+      :full-width="fullWidth" 
+      :key="index" 
+    />
   </div>
 </template>
 
@@ -34,14 +40,10 @@ export default {
 
 .posts {
   display: grid;
-  grid-gap: 2.4em;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.4em;
+  grid-template-columns: 1fr 1fr;
 
   @media screen and (max-width: $MDlg) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media screen and (max-width: $MDmd) {
     grid-template-columns: 1fr;
   }
 }

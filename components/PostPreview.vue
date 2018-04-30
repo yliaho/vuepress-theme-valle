@@ -1,5 +1,8 @@
 <template>
-  <div class="post-preview" :style="`grid-column-end: ${fullWidth ? 'span 3' : 'initial'}`">
+  <div 
+    class="post-preview" 
+    :style="`grid-column-end: ${fullWidth ? 'span 3' : 'initial'}`"
+  >
     <div class="post-wrapper">
       <h1 class="post-title">
         <a :href="post.path">{{post.title}}</a>
@@ -51,6 +54,7 @@ export default {
 $line-height = 1.4rem;
 
 .post-preview {
+  height: 120px;
   border-radius: 3px;
 
   .post-wrapper {

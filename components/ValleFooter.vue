@@ -12,11 +12,12 @@ export default {
 
   computed: {
     author() {
-      return this.$site.themeConfig.author
+      const { author } = this.$site.themeConfig
+      return author || ''
     },
 
     copyright() {
-      return `Copyright © ${new Date().getFullYear()} ${this.author}`
+      return `Copyright © ${new Date().getFullYear()} ${this.author.name}`
     }
   }
 }
