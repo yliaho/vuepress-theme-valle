@@ -1,6 +1,8 @@
 import { compareAsc, compareDesc } from 'date-fns'
 import { flatten } from 'lodash'
 import { md, stripMd } from './utils/index'
+//@ts-ignore
+import pkg from './package.json'
 
 export default ({ Vue, options, router, siteData: { themeConfig } }) => {
   Vue.mixin({
@@ -58,6 +60,18 @@ export default ({ Vue, options, router, siteData: { themeConfig } }) => {
         return postCollection.sort((a, b) =>
           compareDesc(a.frontmatter.date, b.frontmatter.date)
         )
+      },
+
+      $moduleMeta() {
+        const {
+          name,
+          repository: { url }
+        } = pkg
+
+        return {
+          name,
+          url
+        }
       }
     }
   })
