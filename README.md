@@ -15,7 +15,7 @@ module.exports = {
   description: 'My vuesome blog',
 
   // To use the theme from the node dependencies.
-  theme: 'Valle'
+  theme: 'valle'
 
   themeConfig: {
     // Author specific metadata. Used for homepage bio.
