@@ -26,10 +26,6 @@ export default {
       }
     },
 
-    isHome() {
-      return this.$page.path === '/'
-    },
-
     pageClasses() {
       return `${this.layout}-page`
     }
