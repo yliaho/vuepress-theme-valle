@@ -6,13 +6,15 @@
       </h1>
       <span class="post-date">{{postDate}}</span>
       <div class="post-content preview">
-        {{post.preview.plain}}
+        {{postPreview}}
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { truncateString } from '../utils/index'
+
 export default {
   props: {
     post: {
@@ -25,6 +27,10 @@ export default {
   },
 
   computed: {
+    postPreview() {
+      return truncateString(this.post.preview.plain, 85)
+    },
+
     postDate() {
       const {
         frontmatter: { date }

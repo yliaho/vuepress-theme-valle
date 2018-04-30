@@ -4,8 +4,12 @@ export const md = new MarkdownIt({
   html: false
 })
 
-export const stripMd = (md, options) => {
-  options = options || {}
+/**
+ * Strips output into md'less string.
+ * @param {string} md
+ * @param {Object} options
+ */
+export const stripMd = (md, options = {}) => {
   options.listUnicodeChar = options.hasOwnProperty('listUnicodeChar')
     ? options.listUnicodeChar
     : false
@@ -74,4 +78,12 @@ export const stripMd = (md, options) => {
     return md
   }
   return output
+}
+
+/**
+ * @param {String} string String to truncate.
+ * @param {Number} max Truncate treshold. Defaults to 85
+ */
+export const truncateString = (string, max = 85) => {
+  return string.length > max ? string.substring(0, max) + '...' : string
 }

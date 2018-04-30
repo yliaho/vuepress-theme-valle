@@ -1,7 +1,6 @@
 <template>
   <div class="theme-container" :class="pageClasses">
-    <Home v-if="isHome" />
-    <Post v-else />
+    <component :is="layout"/>
   </div>
 </template>
 
@@ -10,23 +9,29 @@ import Home from './layouts/Home.vue'
 import Post from './layouts/Post.vue'
 
 export default {
+  name: 'layout',
   components: {
     Home,
     Post
   },
 
   computed: {
+    layout() {
+      const { path } = this.$page
+
+      if (path === '/') {
+        return 'home'
+      } else {
+        return 'post'
+      }
+    },
+
     isHome() {
       return this.$page.path === '/'
     },
 
     pageClasses() {
-      return [
-        {
-          'post-page': this.$isPost(this.$page.path),
-          'home-page': this.isHome
-        }
-      ]
+      return `${this.layout}-page`
     }
   },
 

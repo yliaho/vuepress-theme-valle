@@ -2,33 +2,7 @@ import { compareAsc, compareDesc } from 'date-fns'
 import { flatten } from 'lodash'
 import { md, stripMd } from './utils/index'
 
-const genRoutes = themeConfig => [
-  // All posts
-  {
-    path: themeConfig.postDir || '/posts/',
-    //@ts-ignore
-    component: () => import('./layouts/Posts.vue')
-  },
-
-  // Posts by tag
-  {
-    path: `${themeConfig.postDir || '/posts/'}tags/`,
-    //@ts-ignore
-    component: () => import('./layouts/Posts.vue')
-  },
-
-  // Posts by tag
-  {
-    path: `${themeConfig.postDir || '/posts/'}tags/:tag`,
-    //@ts-ignore
-    component: () => import('./layouts/Posts.vue'),
-    props: true
-  }
-]
-
 export default ({ Vue, options, router, siteData: { themeConfig } }) => {
-  router.addRoutes(genRoutes(themeConfig))
-
   Vue.mixin({
     computed: {
       /**

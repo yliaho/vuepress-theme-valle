@@ -30,12 +30,19 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '../styles/config.styl';
+
 .posts {
   display: grid;
-  grid-gap: 1.2em;
+  grid-gap: 2.4em;
   grid-template-columns: 1fr 1fr 1fr;
 
-  > * {
+  @media screen and (max-width: $MDlg) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: $MDmd) {
+    grid-template-columns: 1fr;
   }
 }
 </style>
