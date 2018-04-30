@@ -12,7 +12,10 @@ Theme specific options in VuePress config.
 module.exports = {
   // The theme uses `title` and `description`
   title: 'Yliaho',
-  description: 'My vuesome blog'
+  description: 'My vuesome blog',
+
+  // To use the theme from the node dependencies.
+  theme: 'Valle'
 
   themeConfig: {
     // Author specific metadata. Used for homepage bio.
