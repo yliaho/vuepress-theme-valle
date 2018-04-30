@@ -1,11 +1,11 @@
 <template>
-  <div class="post" :style="`grid-column-end: ${fullWidth ? 'span 3' : 'initial'}`">
+  <div class="post-preview" :style="`grid-column-end: ${fullWidth ? 'span 3' : 'initial'}`">
     <div class="post-wrapper">
       <h1 class="post-title">
         <a :href="post.path">{{post.title}}</a>
       </h1>
       <span class="post-date">{{postDate}}</span>
-      <div class="post-content preview">
+      <div class="post-preview-content">
         {{postPreview}}
       </div>
     </div>
@@ -49,4 +49,29 @@ export default {
 
 <style lang="stylus">
 @import '../styles/post.styl';
+
+$line-height = 1.4rem;
+
+.post-preview {
+  border-radius: 3px;
+
+  .post-wrapper {
+    .post-title {
+      font-size: 1.08em;
+      line-height: $line-height;
+    }
+
+    .post-date {
+      font-size: 0.92em;
+      display: inline-block;
+      color: lighten(black, 70%);
+      margin-bottom: 1.2em;
+      font-weight: 100;
+    }
+
+    .post-content {
+      line-height: $line-height;
+    }
+  }
+}
 </style>

@@ -38,8 +38,13 @@ export default {
 <style lang="stylus">
 @import './styles/nanoreset.css';
 @import './styles/theme.styl';
+@import './styles/config.styl';
 
 .theme-container {
-  padding: 0 1.2em;
+  padding: 0 2.4em;
+
+  @media screen and (max-width: $MDsm) {
+    padding: 0 1em;
+  }
 }
 </style>
