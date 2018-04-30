@@ -9,11 +9,15 @@ _Under development, not ready for use._
 Theme specific options in VuePress config.
 
 ```javascript
-{
+module.exports = {
+  // The theme uses `title` and `description`
+  title: 'Yliaho',
+  description: 'My vuesome blog'
+
   themeConfig: {
     // Author specific metadata. Used for homepage bio.
     author: {
-      name: 'Yliaho'
+      name: 'John Doe'
     },
     // defaults to '/posts/' if postDir isn't provided.
     postDir: '/posts/'
