@@ -48,8 +48,6 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../styles/post.styl';
-
 $line-height = 1.4rem;
 
 .post-preview {
