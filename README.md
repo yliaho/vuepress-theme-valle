@@ -21,6 +21,12 @@ module.exports = {
     // Author specific metadata. Used for homepage bio.
     author: {
       name: 'John Doe'
+      social: {
+        facebook: 'url',
+        twitter: 'url',
+        linkedin: 'url',
+        instagram: 'url'
+      }
     },
     // defaults to '/posts/' if postDir isn't provided.
     postDir: '/posts/'
