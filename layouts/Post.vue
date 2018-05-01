@@ -15,9 +15,6 @@ export default {}
 @import '../styles/colors';
 
 .post-container {
-  max-width: 720px;
-  margin: 0 auto;
-  padding-top: 4rem;
   padding-bottom: 4rem;
 
   .post-title {
