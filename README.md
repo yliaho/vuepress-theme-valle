@@ -1,4 +1,4 @@
-# blog-vuepress-theme
+# vuepress-theme-valle
 
 > Simple [VuePress](https://github.com/vuejs/vuepress) theme with blogging support.
 
