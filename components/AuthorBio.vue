@@ -7,9 +7,13 @@
           backgroundColor: '#067BC2'
         }"
       />
-      <h1 class="author-name">{{author.name}}</h1>
-      <Content/>
-      <Some/>
+      <div class="content">
+        <h1 class="author-name">{{author.name}}</h1>
+        <div class="bio-description">
+          <Content/>
+        </div>
+        <Some/>
+      </div>
     </div>
   </section>
 </template>
@@ -31,18 +35,32 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '../styles/config.styl';
+
 .author-bio {
-  // padding: 2.4rem;
-  // padding: 2rem 0;
   grid-row: span 2;
   display: flex;
-  justify-content: center;
-  align-items: center;
+
+  @media screen and (max-width: $MDlg) {
+    margin: 0 0 2em 0;
+  }
 
   .mug {
     height: 4.4rem;
     width: 4.4rem;
     border-radius: 50%;
+    transform: translateY(-0.6em);
+  }
+
+  .content {
+    // flex: 1;
+    .author-name {
+      margin-bottom: 0.5em;
+    }
+
+    .bio-description {
+      padding-bottom: 1em;
+    }
   }
 }
 </style>

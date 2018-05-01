@@ -16,8 +16,6 @@
 <script>
 import FontAwesome from '@fortawesome/vue-fontawesome'
 
-const validSomePlatforms = ['facebook', 'twitter', 'linkedin', 'instagram']
-
 export default {
   components: {
     FontAwesome
@@ -26,11 +24,16 @@ export default {
   computed: {
     someLinks() {
       const { social = [] } = this.$site.themeConfig.author
-      const entries = Object.entries(social).filter(([name, _link]) => {
+
+      return Object.entries(social).filter(([name, _link]) => {
+        const validSomePlatforms = [
+          'facebook',
+          'twitter',
+          'linkedin',
+          'instagram'
+        ]
         return validSomePlatforms.includes(name)
       })
-
-      return social ? entries : null
     }
   }
 }
@@ -43,7 +46,6 @@ export default {
 
     .some-link {
       font-size: 1.3em;
-      padding: 1em 0;
 
       a {
         padding-right: 0.8em;

@@ -17,7 +17,7 @@ export default {
 @import '../styles/colors.styl';
 
 .hero {
-  margin: 2.4em 0;
+  margin: 4em 0;
   padding: 0 0em;
 
   h1 {

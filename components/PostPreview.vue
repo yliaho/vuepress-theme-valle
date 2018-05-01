@@ -51,12 +51,18 @@ export default {
 </script>
 
 <style lang="stylus">
+@import '../styles/config.styl';
+
 $line-height = 1.4rem;
 
 .post-preview {
   height: 120px;
   border-radius: 3px;
   overflow: hidden;
+
+  @media screen and (max-width: $MDlg) {
+    height: initial;
+  }
 
   .post-wrapper {
     .post-title {
