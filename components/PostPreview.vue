@@ -56,6 +56,7 @@ $line-height = 1.4rem;
 .post-preview {
   height: 120px;
   border-radius: 3px;
+  overflow: hidden;
 
   .post-wrapper {
     .post-title {
@@ -67,11 +68,11 @@ $line-height = 1.4rem;
       font-size: 0.92em;
       display: inline-block;
       color: lighten(black, 70%);
-      margin-bottom: 1.2em;
+      margin-bottom: 0.2em;
       font-weight: 100;
     }
 
-    .post-content {
+    .post-preview-content {
       line-height: $line-height;
     }
   }

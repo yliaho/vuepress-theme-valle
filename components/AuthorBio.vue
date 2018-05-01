@@ -7,14 +7,21 @@
           backgroundColor: '#067BC2'
         }"
       />
-      <h1>{{author.name}}</h1>
+      <h1 class="author-name">{{author.name}}</h1>
       <Content/>
+      <Some/>
     </div>
   </section>
 </template>
 
 <script>
+import Some from './Some.vue'
+
 export default {
+  components: {
+    Some
+  },
+
   computed: {
     author() {
       return this.$site.themeConfig.author

@@ -1,10 +1,26 @@
 import { compareAsc, compareDesc } from 'date-fns'
-import { flatten } from 'lodash'
+import fontawesome from '@fortawesome/fontawesome'
+import {
+  faTwitter,
+  faFacebook,
+  faLinkedin,
+  faInstagram
+} from '@fortawesome/fontawesome-free-brands'
+import flatten from 'lodash.flatten'
+
 import { md, stripMd } from './utils/index'
 //@ts-ignore
 import pkg from './package.json'
 
+function orderPostsByDate(postCollection) {
+  return postCollection.sort((a, b) =>
+    compareDesc(a.frontmatter.date, b.frontmatter.date)
+  )
+}
+
 export default ({ Vue, options, router, siteData: { themeConfig } }) => {
+  fontawesome.library.add(faTwitter, faFacebook, faLinkedin, faInstagram)
+
   Vue.mixin({
     computed: {
       /**
@@ -13,7 +29,7 @@ export default ({ Vue, options, router, siteData: { themeConfig } }) => {
       $posts() {
         const { pages } = this.$site
 
-        return this._orderPostsByDate(
+        return orderPostsByDate(
           pages
             .filter(({ path }) => this.$isPost(path))
             .map(({ excerpt, ...rest }) => {
@@ -56,12 +72,6 @@ export default ({ Vue, options, router, siteData: { themeConfig } }) => {
         )
       },
 
-      _orderPostsByDate(postCollection) {
-        return postCollection.sort((a, b) =>
-          compareDesc(a.frontmatter.date, b.frontmatter.date)
-        )
-      },
-
       $moduleMeta() {
         const {
           name,
@@ -71,6 +81,7 @@ export default ({ Vue, options, router, siteData: { themeConfig } }) => {
 
         return {
           name,
+          version,
           url
         }
       }
