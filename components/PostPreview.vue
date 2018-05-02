@@ -5,7 +5,7 @@
   >
     <div class="post-wrapper">
       <h1 class="post-title">
-        <a :href="post.path">{{post.title}}</a>
+        <router-link :to="post.path">{{post.title}}</router-link>
       </h1>
       <span class="post-date">{{postDate}}</span>
       <div class="post-preview-content">

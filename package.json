@@ -26,11 +26,13 @@
     "@fortawesome/vue-fontawesome": "^0.0.22",
     "date-fns": "^1.29.0",
     "lodash.flatten": "^4.4.0",
-    "markdown-it": "^8.4.1"
+    "markdown-it": "^8.4.1",
+    "nprogress": "^0.2.0"
   },
   "devDependencies": {
     "@types/date-fns": "^2.6.0",
     "@types/lodash": "^4.14.108",
+    "@types/nprogress": "^0.0.29",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
     "prettier": "^1.12.1"

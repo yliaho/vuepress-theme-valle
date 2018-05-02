@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import nprogress from 'nprogress'
+
 import Home from './layouts/Home.vue'
 import Post from './layouts/Post.vue'
 import MainHero from './components/MainHero.vue'
@@ -37,7 +39,22 @@ export default {
     }
   },
 
-  mounted() {}
+  mounted() {
+    // progress bar configuration
+    nprogress.configure({ showSpinner: false })
+
+    this.$router.beforeEach((to, from, next) => {
+      if (to.path !== from.path) {
+        nprogress.start()
+      }
+
+      next()
+    })
+
+    this.$router.afterEach(() => {
+      nprogress.done()
+    })
+  }
 }
 </script>
 
@@ -45,6 +62,7 @@ export default {
 @import './styles/nanoreset.css';
 @import './styles/theme.styl';
 @import './styles/config.styl';
+@import './styles/nprogress.styl';
 
 .theme-container {
   padding: 0 2.4em;
