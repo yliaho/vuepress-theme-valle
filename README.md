@@ -4,6 +4,13 @@
 
 _Under development, not ready for use._
 
+## Installing
+
+* `yarn install vuepress-theme-valle` or `npm install vuepress-theme-valle --save`
+* Inside your existing VuePress project, create (if not present) `config.js` inside `.vuepress` folder.
+* Add `theme: 'valle'` to the config object.
+* That's it! VuePress now uses Valle as its theme.
+
 ## Theme Config
 
 Theme specific options in VuePress config.
