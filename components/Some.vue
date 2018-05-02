@@ -30,7 +30,8 @@ export default {
           'facebook',
           'twitter',
           'linkedin',
-          'instagram'
+          'instagram',
+          'github'
         ]
         return validSomePlatforms.includes(name)
       })
