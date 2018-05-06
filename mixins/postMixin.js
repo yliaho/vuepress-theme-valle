@@ -1,6 +1,6 @@
 import flatten from 'lodash.flatten'
 import { compareAsc, compareDesc } from 'date-fns'
-import { md, stripMd } from './utils/index'
+import { md, stripMd } from '../utils/index'
 
 function orderPostsByDate(postCollection) {
   return postCollection.sort((a, b) =>
