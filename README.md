@@ -20,16 +20,13 @@ Theme specific options in VuePress config.
 ```javascript
 module.exports = {
   // The theme uses `title` and `description`
-  title: 'Yliaho',
+  title: 'My Blog',
   description: 'My vuesome blog',
-
-  // To use the theme from the node dependencies.
-  theme: 'valle'
 
   themeConfig: {
     // Author specific metadata. Used for homepage bio.
     author: {
-      name: 'John Doe'
+      name: 'John Doe',
       social: {
         facebook: 'url',
         twitter: 'url',
