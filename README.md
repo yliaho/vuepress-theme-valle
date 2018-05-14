@@ -2,7 +2,9 @@
 
 > Simple [VuePress](https://github.com/vuejs/vuepress) theme with blogging support.
 
-![Screenshot of Valle VuePress theme](./screenshot.png)
+| Screenshot                                              |
+| ------------------------------------------------------- |
+| ![Screenshot of Valle VuePress theme](./screenshot.png) |
 
 ## **Under development, not ready for use!**
 
