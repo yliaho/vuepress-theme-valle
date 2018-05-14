@@ -1,13 +1,11 @@
 {
   "name": "vuepress-theme-valle",
-  "version": "0.1.41",
+  "version": "0.1.5",
   "description": "Simple blog theme for VuePress",
   "author": "Joonas Yliaho",
   "license": "MIT",
   "scripts": {
-    "precommit": "lint-staged",
-    "prepublishOnly":
-      "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s"
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",

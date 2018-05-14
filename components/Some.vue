@@ -1,12 +1,9 @@
 <template>
   <div class="some">
     <span v-if="someLinks">
-      <div 
-        class="some-link"
-        v-for="[name, link] of someLinks"
-      >
+      <div class="some-link" v-for="[name, link] of someLinks">
         <a :href="link">
-          <FontAwesome :icon="['fab', name]"/>
+          <FontAwesome :icon="['fab', name]" />
         </a>
       </div>
     </span>
@@ -41,9 +38,16 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '../styles/config.styl';
+
 .some {
   span {
     display: flex;
+    justify-content: flex-end;
+
+    @media screen and (max-width: $MDlg) {
+      justify-content: flex-start;
+    }
 
     .some-link {
       font-size: 1.3em;

@@ -2,6 +2,8 @@
 
 > Simple [VuePress](https://github.com/vuejs/vuepress) theme with blogging support.
 
+![Screenshot of Valle VuePress theme](./screenshot.png)
+
 ## **Under development, not ready for use!**
 
 This is a work in progress project to see the possible blogging capabilities of VuePress. A lot of stuff is still under development and is not ready to be used in production.

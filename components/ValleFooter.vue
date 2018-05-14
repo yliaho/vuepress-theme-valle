@@ -1,7 +1,8 @@
 <template>
   <footer>
     <span>
-      {{copyright}} – <a :href="$moduleMeta().url">{{$moduleMeta().name}}</a>
+      {{copyright}} –
+      <a :href="$moduleMeta().url">{{$moduleMeta().name}}</a>
     </span>
   </footer>
 </template>
@@ -23,5 +24,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+@import '../styles/config.styl';
+
+footer {
+}
 </style>

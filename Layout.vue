@@ -1,14 +1,8 @@
 <template>
   <div class="theme-container" :class="pageClasses">
-    <div class="hero-wrapper">
-      <MainHero />
-    </div>
-    <section class="main-content">
-      <component :is="layout" />
-    </section>
-    <div class="footer-wrapper">
-      <ValleFooter/>
-    </div>
+    <MainHero />
+    <component class="main-content" :is="layout" />
+    <ValleFooter/>
   </div>
 </template>
 
@@ -74,21 +68,12 @@ export default {
   display: grid;
   height: 100vh;
   grid-column-gap: 2rem;
-  grid-template-rows: 200px 1fr 2rem;
+  grid-template-rows: 200px 1fr minmax(min-content, 2rem);
   grid-template-columns: 1fr minmax(min-content, 1280px) 1fr;
   grid-template-areas: '-head head head-' '-cont cont cont-' 'foot foot foot';
 
-  &.home-page {
-    margin: 0 auto;
-  }
-
-  &.post-page {
-    margin: 0 auto;
-  }
-
-  .hero-wrapper {
+  .hero {
     grid-area: head;
-    display: grid;
     padding-top: 2rem;
   }
 
@@ -97,9 +82,9 @@ export default {
     margin-bottom: 4rem;
   }
 
-  .footer-wrapper {
+  footer {
     grid-area: foot;
-    background-color: $color-primary-a;
+    background-color: black;
     padding: 0.5rem;
     font-size: 0.92rem;
     display: flex;

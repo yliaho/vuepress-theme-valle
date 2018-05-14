@@ -19,7 +19,7 @@ export default {
 .hero {
   h1 {
     font-size: 1.6em;
-    color: $color-primary-b;
+    color: $color-primary-a;
   }
 
   h2 {
