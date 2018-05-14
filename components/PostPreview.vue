@@ -1,8 +1,5 @@
 <template>
-  <div 
-    class="post-preview" 
-    :style="`grid-column-end: ${fullWidth ? 'span 3' : 'initial'}`"
-  >
+  <div class="post-preview" :style="`grid-column-end: ${fullWidth ? 'span 3' : 'initial'}`">
     <div class="post-wrapper">
       <h1 class="post-title">
         <router-link :to="post.path">{{post.title}}</router-link>
@@ -31,7 +28,7 @@ export default {
 
   computed: {
     postPreview() {
-      return truncateString(this.post.preview.plain, 85)
+      return truncateString(this.post.preview.plain, 98)
     },
 
     postDate() {

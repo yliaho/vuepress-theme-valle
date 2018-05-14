@@ -1,7 +1,7 @@
 <template>
   <section class="hero main-hero">
-      <h1>{{$site.title}}</h1>
-      <h2>{{$site.description}}</h2>
+    <h1>{{$site.title}}</h1>
+    <h2>{{$site.description}}</h2>
   </section>
 </template>
 
@@ -17,9 +17,6 @@ export default {
 @import '../styles/colors.styl';
 
 .hero {
-  margin: 4em 0;
-  padding: 0 0em;
-
   h1 {
     font-size: 1.6em;
     color: $color-primary-b;

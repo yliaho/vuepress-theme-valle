@@ -1,8 +1,14 @@
 <template>
   <div class="theme-container" :class="pageClasses">
-    <MainHero />
-    <component :is="layout"/>
-    <ValleFooter/>
+    <div class="hero-wrapper">
+      <MainHero />
+    </div>
+    <section class="main-content">
+      <component :is="layout" />
+    </section>
+    <div class="footer-wrapper">
+      <ValleFooter/>
+    </div>
   </div>
 </template>
 
@@ -65,20 +71,48 @@ export default {
 @import './styles/nprogress.styl';
 
 .theme-container {
-  padding: 0 2.4em;
+  display: grid;
+  height: 100vh;
+  grid-column-gap: 2rem;
+  grid-template-rows: 200px 1fr 2rem;
+  grid-template-columns: 1fr minmax(min-content, 1280px) 1fr;
+  grid-template-areas: '-head head head-' '-cont cont cont-' 'foot foot foot';
 
   &.home-page {
-    max-width: 1280px;
     margin: 0 auto;
   }
 
   &.post-page {
-    max-width: 720px;
     margin: 0 auto;
   }
 
+  .hero-wrapper {
+    grid-area: head;
+    display: grid;
+    padding-top: 2rem;
+  }
+
+  .main-content {
+    grid-area: cont;
+    margin-bottom: 4rem;
+  }
+
+  .footer-wrapper {
+    grid-area: foot;
+    background-color: $color-primary-a;
+    padding: 0.5rem;
+    font-size: 0.92rem;
+    display: flex;
+    justify-content: center;
+
+    > * {
+      color: white;
+    }
+  }
+
   @media screen and (max-width: $MDsm) {
-    padding: 0 1em;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1rem;
   }
 }
 </style>

@@ -1,12 +1,9 @@
 <template>
   <section class="author-bio">
     <div class="bio-wrapper">
-      <div 
-        class="mug"
-        :style="{
-          backgroundColor: '#067BC2'
-        }"
-      />
+      <div class="mug" :style="{
+          backgroundImage: `url(${$withBase($page.frontmatter.avatar)})`
+        }" />
       <div class="content">
         <h1 class="author-name">{{author.name}}</h1>
         <div class="bio-description">
@@ -45,21 +42,37 @@ export default {
     margin: 0 0 2em 0;
   }
 
-  .mug {
-    height: 4.4rem;
-    width: 4.4rem;
-    border-radius: 50%;
-    transform: translateY(-0.6em);
-  }
+  .bio-wrapper {
+    display: grid;
+    grid-template-columns: 4.4rem 1fr;
+    grid-gap: 1.4rem;
 
-  .content {
-    // flex: 1;
-    .author-name {
-      margin-bottom: 0.5em;
+    @media screen and (max-width: $MDlg) {
+      grid-template-columns: 1fr;
+      grid-gap: 0.6rem;
     }
 
-    .bio-description {
-      padding-bottom: 1em;
+    .mug {
+      background-color: $color-primary-a;
+      background-size: 100%;
+      height: 4.4rem;
+      width: 4.4rem;
+      border-radius: 50%;
+    }
+
+    .content {
+      // flex: 1;
+      .author-name {
+        margin-bottom: 0.5em;
+      }
+
+      .bio-description {
+        padding-bottom: 1em;
+
+        @media screen and (max-width: $MDlg) {
+          max-width: 540px;
+        }
+      }
     }
   }
 }
